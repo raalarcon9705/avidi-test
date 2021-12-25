@@ -1,0 +1,23 @@
+:host {
+
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+
+  .input {
+    flex: 1;
+  }
+
+  button:not(.btn) {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin: 0 6px;
+    width: 54px;
+    &.none {
+      color: #636363;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+<div class="modal-header">
+  <h3>{{ title }}</h3>
+</div>
+
+<form [formGroup]="form">
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-12-sm input">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" id="name">
+      </div>
+      <div class="col-6 input">
+        <label for="symbol">Symbol</label>
+        <input type="text" formControlName="symbol" id="symbol">
+      </div>
+      <div class="col-6 input">
+        <label for="country">Country</label>
+        <input type="text" formControlName="country" id="country">
+      </div>
+      <div class="col-6 input">
+        <label for="sector">Sector</label>
+        <input type="text" formControlName="sector" id="sector">
+      </div>
+      <div class="col-6 input">
+        <label for="industry">Industry</label>
+        <input type="text" formControlName="industry" id="industry">
+      </div>
+      <div class="col-6-sm input">
+        <label for="marketCap">Market Cap</label>
+        <input type="number" formControlName="marketCap" id="marketCap">
+      </div>
+      <div class="col-6-sm input">
+        <label for="lastPrice">Last price</label>
+        <input type="number" formControlName="lastPrice" id="lastPrice">
+      </div>
+      <div class="col-6-sm input">
+        <label for="netChange">Net Change</label>
+        <input type="number" formControlName="netChange" id="netChange">
+      </div>
+      <div class="col-6-sm input">
+        <label for="netChangePercent">Net Change Percent</label>
+        <input type="number" formControlName="netChangePercent" id="netChangePercent">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button (click)="handleCancel()"> Cancel </button>
+    <button type="submit" (click)="$event.preventDefault(); handleSubmit()" [disabled]="form.invalid"> Accept </button> 
+  </div>
+</form>

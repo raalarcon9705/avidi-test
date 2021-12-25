@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+}
+
+tfoot td {
+  text-align: center;
+
+  button {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    border: none;
+  }
+}
+
+form {
+  display: flex;
+}

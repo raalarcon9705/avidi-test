@@ -1,0 +1,48 @@
+<h1>Markets list</h1>
+<!--
+Sorry this filter is breaking the json body in the request
+  <form (submit)="handleSearchSubmit($event)">
+  <div class="input">
+    <label for="search">Filter</label>
+    <input name="search" type="search" id="search" [(ngModel)]="filter['s']">
+  </div>
+  <button type="submit">Search</button>
+</form> -->
+<table>
+  <thead>
+    <tr>
+      <th role="button" (click)="toggleFilter('createdAt')">Created at {{ $any(filterIcon)[filter['createdAt']!] }}</th>
+      <th role="button" (click)="toggleFilter('name')">Name {{ $any(filterIcon)[filter['name']!] }}</th>
+      <th role="button" (click)="toggleFilter('symbol')">Symbol {{ $any(filterIcon)[filter['symbol']!] }} </th>
+      <th role="button" (click)="toggleFilter('country')">Country {{ $any(filterIcon)[filter['country']!] }}</th>
+      <th role="button" (click)="toggleFilter('sector')">Sector {{ $any(filterIcon)[filter['sector']!] }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let market of markets">
+      <td>{{ market.createdAt|date}}</td>
+      <td>{{ market.name }}</td>
+      <td>{{ market.symbol }}</td>
+      <td>{{ market.country }}</td>
+      <td>{{ market.sector }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="5">
+        <button (click)="setPage(page - 1)" [disabled]="page === 1"> < </button>
+        <button (click)="setPage(page - 5)" [disabled]="page < 6"> << </button>
+        <span> {{ page }} / {{ pagesCount }} </span>
+        <button (click)="setPage(page + 5)" [disabled]="page === pagesCount"> >> </button>
+        <button (click)="setPage(page + 1)" [disabled]="page + 5 > pagesCount"> > </button>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<button class="fixed-button" (click)="openCreateModal()">Add</button>
+
+
+<ng-template #createModal>
+  <app-market-form title="Create market" (cancel)="closeModal()" (submit)="createMarket($event)"></app-market-form>
+</ng-template>

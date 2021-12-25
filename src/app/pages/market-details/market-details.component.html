@@ -1,0 +1,15 @@
+<h1 class="text-center">{{ market.name }} ({{ market.symbol }})</h1>
+
+<div class="country"><span class="label">Country: </span>{{ market.country }}</div>
+<div class="industry"><span class="label">Industry: </span>{{ market.industry }}</div>
+<div class="sector"><span class="label">Sector: </span> {{ market.sector }}</div>
+<div class="cap"><span class="label">Market Cap.: </span> {{ market.marketCap|currency }}</div>
+<div class="price"><span class="label">Last price.: </span> {{ market.lastPrice|currency }}</div>
+<div class="net"><span class="label">Net Change: </span> {{ market.netChange }}</div>
+<div class="net"><span class="label">Net Change Percent: </span> {{ market.netChangePercent }}</div>
+
+<button class="fixed-button" (click)="openEditModal()">Edit</button>
+
+<ng-template #editModal>
+  <app-market-form [market]="market" title="Edit market" (cancel)="closeModal()" (submit)="editMarket($event)"></app-market-form>
+</ng-template>

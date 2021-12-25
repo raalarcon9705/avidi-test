@@ -1,0 +1,17 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f6f6f6;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+    a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}

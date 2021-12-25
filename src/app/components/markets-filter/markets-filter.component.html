@@ -1,0 +1,11 @@
+<div>Filters</div>
+<div class="filters">
+  <div class="input">
+    <label for="search">Search</label>
+    <input type="search" id="search" (input)="onSearchChange($event)">
+  </div>
+  <button (click)="toggle('name')" [class.none]="!f.name">Name {{ f.name }}</button>
+  <button (click)="toggle('marketCap')" [class.none]="!f.marketCap">Market cap {{ f.marketCap }}</button>
+  <button (click)="toggle('lastPrice')" [class.none]="!f.lastPrice">Last price {{ f.lastPrice }}</button>
+  <button class="btn" (click)="filterClick()">Filter</button>
+</div>
